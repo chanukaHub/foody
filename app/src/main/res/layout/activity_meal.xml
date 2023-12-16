@@ -56,6 +56,7 @@
             android:layout_height="match_parent">
             
             <LinearLayout
+                android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -67,6 +68,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/tv_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Category : Beef"
@@ -76,8 +78,59 @@
                     app:drawableTint="@color/g_black"
                     app:drawableLeftCompat="@drawable/ic_categories" />
 
+                <TextView
+                    android:id="@+id/tv_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Area : Sri Lanka"
+                    android:textStyle="bold"
+                    android:textColor="@color/g_black"
+                    android:layout_weight="1"
+                    app:drawableTint="@color/g_black"
+                    app:drawableLeftCompat="@drawable/ic_area" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Instructions : "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15ssp"
+                android:fontFamily="@font/myfont"/>
+
+            <TextView
+                android:id="@+id/tv_instruction_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/tv_instruction"
+                app:layout_constraintTop_toBottomOf="@+id/tv_instruction"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textColor="@color/black"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/img_youtube"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="bottom|center"
+        android:src="@drawable/ic_youtube"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+    
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom"
+        android:visibility="gone"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
