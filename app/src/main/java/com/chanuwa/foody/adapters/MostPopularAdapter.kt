@@ -2,17 +2,16 @@ package com.chanuwa.foody.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chanuwa.foody.databinding.PopularItemsBinding
-import com.chanuwa.foody.models.CategoryListModel
+import com.chanuwa.foody.models.MealsByCategoryListModel
 
 class MostPopularAdapter():RecyclerView.Adapter<MostPopularAdapter.PopularMealViewHolder>() {
-    lateinit var onItemClick:((CategoryListModel.Meal)-> Unit)
-    private var mealsList = ArrayList<CategoryListModel.Meal>()
+    lateinit var onItemClick:((MealsByCategoryListModel.Meal)-> Unit)
+    private var mealsList = ArrayList<MealsByCategoryListModel.Meal>()
 
-    fun setMeals(mealsList:ArrayList<CategoryListModel.Meal>){
+    fun setMeals(mealsList:ArrayList<MealsByCategoryListModel.Meal>){
         this.mealsList = mealsList
         notifyDataSetChanged()
     }
